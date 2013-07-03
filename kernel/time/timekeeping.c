@@ -1582,7 +1582,7 @@ struct timespec get_monotonic_coarse(void)
  */
 void do_timer(unsigned long ticks)
 {
-	jiffies_64 += ticks;
+	jiffies_64 += ticks;    // Ôö¼Ójiffies_64
 	update_wall_time();
 	calc_global_load(ticks);
 }
