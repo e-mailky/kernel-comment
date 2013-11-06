@@ -177,9 +177,9 @@ int __init sysfs_init(void)
 	if (err)
 		goto out_err;
 
-	err = register_filesystem(&sysfs_fs_type);
+	err = register_filesystem(&sysfs_fs_type); //向内核注册sysfs文件系统
 	if (!err) {
-		sysfs_mnt = kern_mount(&sysfs_fs_type);
+		sysfs_mnt = kern_mount(&sysfs_fs_type);//将sysfs文件系统挂载到自己的根目录
 		if (IS_ERR(sysfs_mnt)) {
 			printk(KERN_ERR "sysfs: could not mount!\n");
 			err = PTR_ERR(sysfs_mnt);
